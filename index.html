@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Study with leecho</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.1/require.min.js"></script>
+    <link rel="stylesheet" href="./src/css/main.css">
+</head>
+
+<body>
+    <div class="login-box">
+        <a href="#" class="login-box__button">로그인 해볼텐가?</a>
+    </div>
+    <script>
+        var studyRequire = require.config({
+            baseUrl: './src/js/',
+            paths: {
+                jquery: ['https://code.jquery.com/jquery-1.12.4.min', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min'],
+                Spinner: 'https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min'
+            }
+        });
+        studyRequire(['main'], function(main){
+            return main();
+        })();
+    </script>
+</body>
+
+</html>
