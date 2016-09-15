@@ -1,0 +1,22 @@
+{
+  "name": "study",
+  "version": "1.0.0",
+  "description": "study files with leecho",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://oshx@github.com/oshx/study.git"
+  },
+  "keywords": [
+    "study"
+  ],
+  "author": "oshios A.K.A Odi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oshx/study/issues"
+  },
+  "homepage": "https://github.com/oshx/study"
+}
