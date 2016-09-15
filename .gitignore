@@ -1,4 +1,6 @@
 node_modules/*
-bower_components/*
+bower_components/**/*.min.map
+bower_components/**/*.md
+bower_components/**/*.json
 goorm.manifest
 .DS_Store
