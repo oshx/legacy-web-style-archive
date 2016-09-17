@@ -13,7 +13,6 @@ define([
             ui.$loginTrigger = ui.$loginRoot.find(ui.loginTrigger);
             ui.spinner = new Spinner();
             ui.$loginTrigger.setLoading = function(isActive){
-                console.log('setLoading', ui);
                 if(!isActive){
                     ui.spinner.stop();
                     return ui.$loginTrigger.removeClass(ui._loginTriggerActive);
