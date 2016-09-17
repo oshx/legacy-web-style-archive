@@ -19,8 +19,7 @@ define(function () {
     }
     function _loginEventHandler(evt) {
         evt.preventDefault();
-        _setLoginLoaderActive(true);
-        _setLoginTriggerFade(true);
+        ui.$loginTrigger.setLoading(true);
         return setTimeout(_loginSuccess, _CONSTANTS.LOGIN_DELAY);
     }
     function _setLoginLoaderActive(isActive) {
@@ -33,8 +32,7 @@ define(function () {
         return ui.$loginTrigger.stop().fadeTo(_CONSTANTS.FADE_SPEED, ((!isFade) ? _CONSTANTS.FADE_OFF : _CONSTANTS.FADE_ON));
     }
     function _loginSuccess(){
-        _setLoginLoaderActive(false);
-        _setLoginTriggerFade(false);
+        ui.$loginTrigger.setLoading(false);
     }
     return {
         init: init

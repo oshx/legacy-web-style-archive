@@ -7,20 +7,32 @@
 
 .login-box{
     position:relative;
-    width:300px;
-    margin:25px auto 0;
-    padding:25px;
-    border:1px solid #000;
-    background-color:#ccc;
+    max-width:50%;
+    min-width:200px;
+    margin:5% auto 0;
+    padding:10%;
+    border:1px solid #333;
+    background-color:#eee;
     text-align:center;
 }
 
 .login-box__button{
     display:inline-block;
-    padding:10px;
+    padding:5%;
     border:1px solid #000;
-    background-color:#eee;
+    border-radius:2px;
+    background-color:#fff;
     text-decoration: none;
     color:#000;
-    box-shadow:inset -2px -3px 4px rgba(0,0,0,.25);
+}
+.login-box__button:hover,
+.login-box__button:focus{
+    border-color:#369;
+    background-color:#9cf;
+}
+.login-box__button--active,
+.login-box__button:active{
+    border-color:#666 !important;
+    background-color:#ccc !important;
+    color:#666 !important;
 }
