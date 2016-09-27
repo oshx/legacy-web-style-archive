@@ -10,6 +10,12 @@
     'use strict';
     var param;
     function init(){
+        if (!window.console) {
+            window.console = {};
+        }
+        if (!window.console.log) {
+            window.console.log = function(){};
+        }
         console.log(window.top);
         window.top.sayHello();
     }
