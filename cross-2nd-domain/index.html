@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>include iframe demo - oshx</title>
     <script>
-        function hello(){
-            alert('This function has been called by inside of iframe page');
-        }
-        window.addEventListener("message", function(message){
-            alert(message.data);
-        })
+function messageHandler(messageObject){
+    alert(messageObject.data);
+}
+if (window.addEventListener) {
+    window.addEventListener("message", messageHandler, false);
+} else if (window.attachEvent) {
+    window.attachEvent("message", messageHandler);
+} else {
+    window.onMessage = messageHandler;
+}
     </script>
 </head>
 
