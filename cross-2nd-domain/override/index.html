@@ -6,35 +6,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>last child iframe demo - oshx</title>
     <script>
-(function(){
-    'use strict';
-    var param;
-    function init(){
-        if (!window.console) {
-            window.console = {};
-        }
-        if (!window.console.log) {
-            window.console.log = function(){};
-        }
-        console.log(window.top);
-        window.top.sayHello();
-    }
-    function getParam(){
-        var orgParam = location.search.replace(/\?/,'').split('&');
-        var returnObject = {};
-        if (orgParam.length === 1 && orgParam[0] === '') {
-            return returnObject;
-        }
-        for (var i=0, iMax = orgParam.length; i<iMax; i++) {
-            var objectParam = orgParam[i].split('=');
-            if (objectParam.length > 0) {
-                returnObject[objectParam[0]] = objectParam[1];
-            }
-        }
-        return returnObject;
-    }
-    return init();
-})();
 </script>
 </head>
 

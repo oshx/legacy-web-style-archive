@@ -6,19 +6,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>include iframe demo - oshx</title>
     <script>
-(function(){
-    'use strict';
-    function init(){
-        exportToGlobal('sayHello', sayHello);
-    }
-    function exportToGlobal(keyName, objectName){
-        return (typeof keyName !== 'string' || !objectName)? null: window[keyName] = objectName;
-    }
-    function sayHello(){
-        alert('finally HELLO!');
-    }
-    return init();
-})();
+function sayHello(){
+    alert('finally HELLO!');
+}
 </script>
 </head>
 
