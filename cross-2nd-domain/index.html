@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>include iframe demo - oshx</title>
     <script>
-function hello(){
-    alert('called by window.top from iframe');
-}
-function messageHandler(messageObject){
-    alert(messageObject.data);
-}
-if (window.addEventListener) {
-    window.addEventListener("message", messageHandler, false);
-} else if (window.attachEvent) {
-    window.attachEvent("message", messageHandler);
-} else {
-    window.onMessage = messageHandler;
-}
-    </script>
+(function(){
+    'use strict';
+    function init(){
+        exportToGlobal('sayHello', sayHello);
+    }
+    function exportToGlobal(keyName, objectName){
+        return (typeof keyName !== 'string' || !objectName)? null: window[keyName] = objectName;
+    }
+    function sayHello(){
+        alert('finally HELLO!');
+    }
+    return init();
+})();
+</script>
 </head>
 
 <body>
     <h1>include iframe demo - oshx</h1>
-    <iframe src="//ohub.github.io/cross-2nd-domain/"></iframe>
+    <iframe src="//ohub.github.io/cross-2nd-domain/?caller=oshx&callbackUrl=study_cross-2nd-domain_override"></iframe>
 </body>
 
 </html>
