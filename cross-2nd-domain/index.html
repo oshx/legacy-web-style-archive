@@ -9,6 +9,9 @@
         function hello(){
             alert('This function has been called by inside of iframe page');
         }
+        window.addEventListener("message", function(message){
+            alert(message);
+        })
     </script>
 </head>
 
