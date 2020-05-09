@@ -1,22 +1,25 @@
 {
-  "name": "study",
+  "name": "legacy-web-style-archive",
   "version": "1.0.0",
-  "description": "study files with leecho",
-  "main": "index.js",
+  "description": "Legacy web style archive in here.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    
   },
   "repository": {
     "type": "git",
-    "url": "https://oshx@github.com/oshx/study.git"
+    "url": "https://oshx@github.com/oshx/legacy-web-style-archive.git"
   },
   "keywords": [
-    "study"
+    "legacy",
+    "old school"
   ],
-  "author": "oshios A.K.A Odi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oshx/study/issues"
+  "author": {
+    "name": "오승환",
+    "email": "oshxios@gmail.com"
   },
-  "homepage": "https://github.com/oshx/study"
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/oshx/legacy-web-style-archive/issues"
+  },
+  "homepage": "https://github.com/oshx/legacy-web-style-archive"
 }
