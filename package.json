@@ -25,7 +25,7 @@
 	},
 	"homepage": "https://github.com/oshx/legacy-web-style-archive",
 	"dependencies": {
-		"jquery": "^1.12.4",
+		"jquery": "^3.5.0",
 		"requirejs": "^2.3.6",
 		"spin.js": "^2.3.2"
 	},
