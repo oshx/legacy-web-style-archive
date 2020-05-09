@@ -1,25 +1,38 @@
 {
-  "name": "legacy-web-style-archive",
-  "version": "1.0.0",
-  "description": "Legacy web style archive in here.",
-  "scripts": {
-    
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://oshx@github.com/oshx/legacy-web-style-archive.git"
-  },
-  "keywords": [
-    "legacy",
-    "old school"
-  ],
-  "author": {
-    "name": "오승환",
-    "email": "oshxios@gmail.com"
-  },
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/oshx/legacy-web-style-archive/issues"
-  },
-  "homepage": "https://github.com/oshx/legacy-web-style-archive"
+	"name": "legacy-web-style-archive",
+	"version": "1.0.0",
+	"description": "Legacy web style archive in here.",
+	"scripts": {
+		"dev": "npm run server & npm run gulp -- watch",
+		"server": "serve dist -p 8080",
+		"gulp": "gulp"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://oshx@github.com/oshx/legacy-web-style-archive.git"
+	},
+	"keywords": [
+		"legacy",
+		"old school"
+	],
+	"author": {
+		"name": "오승환",
+		"email": "oshxios@gmail.com"
+	},
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/oshx/legacy-web-style-archive/issues"
+	},
+	"homepage": "https://github.com/oshx/legacy-web-style-archive",
+	"dependencies": {
+		"jquery": "^1.12.4",
+		"requirejs": "^2.3.6",
+		"spin.js": "^2.3.2"
+	},
+	"devDependencies": {
+		"del": "^5.1.0",
+		"gulp": "^4.0.2",
+		"gulp-watch": "^5.0.1",
+		"serve": "^11.3.0"
+	}
 }
