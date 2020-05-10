@@ -3,7 +3,8 @@
 	"version": "1.0.0",
 	"description": "Legacy web style archive in here.",
 	"scripts": {
-		"dev": "npm run --silent server & npm run gulp -- watch",
+		"dev": "npm run server & npm run gulp -- watch",
+		"predev": "npm run gulp",
 		"server": "serve dist -p 8080",
 		"gulp": "gulp"
 	},
@@ -32,7 +33,6 @@
 	"devDependencies": {
 		"del": "^5.1.0",
 		"gulp": "^4.0.2",
-		"gulp-rename": "^2.0.0",
 		"gulp-uglify": "^3.0.2",
 		"gulp-watch": "^5.0.1",
 		"serve": "^11.3.0"

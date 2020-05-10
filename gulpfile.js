@@ -19,9 +19,9 @@ var config = {
 		target: "dist"
 	},
 	fetchConfig: {
-		"node_modules/requirejs/require.js": "dist/lib/require.js/2.3.6",
-		"node_modules/jquery/dist/jquery.min.js": "dist/lib/jquery/1.12.4",
-		"node_modules/spin.js/spin.min.js": "dist/lib/spin.js/2.3.2"
+		"node_modules/requirejs/require.js": "dist/lib",
+		"node_modules/jquery/dist/jquery.min.js": "dist/lib",
+		"node_modules/spin.js/spin.min.js": "dist/lib"
 	}
 };
 

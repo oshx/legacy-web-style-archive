@@ -9,7 +9,6 @@ var taskMinify = function (config) {
 		return gulp
 			.src(uglify)
 			.pipe(require("gulp-uglify")())
-			.pipe(require("gulp-rename")({ suffix: ".min" }))
 			.pipe(dest(target));
 	};
 };
