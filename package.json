@@ -6,11 +6,19 @@
 		"dev": "npm run server & npm run gulp -- watch",
 		"predev": "npm run gulp",
 		"server": "serve dist -p 8080",
-		"gulp": "gulp"
+		"gulp": "gulp",
+		"predeploy": "npm run gulp",
+		"deploy": "node scripts/deploy.js"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://oshx@github.com/oshx/legacy-web-style-archive.git"
+	},
+	"config": {
+		"ssh": "ssh://git@github.com/oshx/legacy-web-style-archive.git",
+		"branch": "gh-pages",
+		"remote": "origin",
+		"path": "./dist/"
 	},
 	"keywords": [
 		"legacy",
@@ -24,7 +32,7 @@
 	"bugs": {
 		"url": "https://github.com/oshx/legacy-web-style-archive/issues"
 	},
-	"homepage": "https://github.com/oshx/legacy-web-style-archive",
+	"homepage": "https://oshx.github.io/legacy-web-style-archive",
 	"dependencies": {
 		"jquery": "^1.12.4",
 		"requirejs": "^2.3.6",
@@ -35,6 +43,8 @@
 		"gulp": "^4.0.2",
 		"gulp-uglify": "^3.0.2",
 		"gulp-watch": "^5.0.1",
-		"serve": "^11.3.0"
+		"rimraf": "^3.0.2",
+		"serve": "^11.3.0",
+		"simple-git": "^2.4.0"
 	}
 }
