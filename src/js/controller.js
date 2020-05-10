@@ -23,7 +23,7 @@ define([
 		) {
 			screenModel.loading.set(false);
 			response.status === 200
-				? view._$loginForm(response.message)
+				? view._$main(response.message)
 				: view._$dashboard(response.message);
 		});
 	});
