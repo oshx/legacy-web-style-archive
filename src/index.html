@@ -15,18 +15,18 @@
 		<script src="./lib/require.js" defer data-main="./js/config.js"></script>
 	</head>
 	<body>
-		<div class="_$main">
-			<form class="_$loginForm">
-				<input class="_$id" type="text" value="" placeholder="아이디" />
+		<div class="_$main root">
+			<form class="_$loginForm login-form">
+				<input class="_$id login-form__text" type="text" value="" placeholder="아이디" />
 				<input
-					class="_$password"
+					class="_$password login-form__text"
 					type="password"
 					value=""
 					placeholder="비밀번호"
 					autocomplete="false"
 				/>
-				<div class="_$dashboard"></div>
-				<button type="submit" class="_$submit">로그인</button>
+				<div class="_$dashboard login-form__message"></div>
+				<button type="submit" class="_$submit login-form__trigger">로그인</button>
 			</div>
 		</div>
 	</body>
