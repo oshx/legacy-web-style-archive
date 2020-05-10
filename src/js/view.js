@@ -15,6 +15,15 @@ define(["jquery", "spin", "utils/type"], function ($, Spin, type) {
 		renderrer.enable = function (off) {
 			$target.prop("disabled", !off);
 		};
+		renderrer.show = function () {
+			$target.clearQueue().stop().fadeIn();
+		};
+		renderrer.hide = function () {
+			$target.clearQueue().stop().fadeout();
+		};
+		renderrer.error = function (on) {
+			$target[on ? "addClass" : "removeClass"]("error");
+		};
 		renderrer.value = $target.val.bind($target);
 		return renderrer;
 	};

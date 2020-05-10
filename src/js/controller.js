@@ -22,9 +22,12 @@ define([
 			response
 		) {
 			screenModel.loading.set(false);
-			response.status === 200
-				? view._$main(response.message)
-				: view._$dashboard(response.message);
+			if (response.status === 200) {
+				return view._$main(response.message);
+			}
+			view._$id.error(true);
+			view._$password.error(true);
+			view._$dashboard(response.message);
 		});
 	});
 	screenModel.on(screenModel.update.key, function () {
@@ -36,11 +39,17 @@ define([
 		view._$loginForm.enable(off);
 	});
 	userModel.on(userModel.update.key, function () {
-		view._$dashboard(
-			"id:" + userModel.id.get() + " / password:" + userModel.password.get()
-		);
+		var id = userModel.id.get();
+		var password = userModel.password.get();
+		var message =
+			(id || password) !== ""
+				? (id ? "[아이디]" + id + " " : "") +
+				  (password ? "[비밀번호]" + password : "")
+				: "아이디와 비밀번호를 입력해주세요!";
+		view._$dashboard(message);
+		view._$id.error(false);
+		view._$password.error(false);
 	});
-	userModel.update();
-	screenModel.update();
-	return;
+	view._$main.show();
+	return userModel.update();
 });
