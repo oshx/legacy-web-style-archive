@@ -3,33 +3,34 @@ define(["jquery"], function ($) {
 	return (function ($model) {
 		var eventMap = {};
 		var modelInterface = {};
-		var setter = null;
-		var getter = null;
-		for (var keyName in $model.get(0)) {
-			if (!$model.get(0).hasOwnProperty(keyName)) {
+		var model = $model.get(0);
+		for (var keyName in model) {
+			if (!model.hasOwnProperty(keyName)) {
 				continue;
 			}
-			(keyName + "").replace(/(\w)(\w+)/g, function (all, m1, m2) {
+			var setter = null;
+			var getter = null;
+
+			(keyName + "").exec(/(\w)(\w+)/g, function (all, m1, m2) {
 				var key = m1.toUpperCase() + m2;
 				setter = "set" + key;
 				getter = "get" + key;
 			});
 
-			eventMap[setter] = function (event, value) {
+			eventMap[setter] = function _handler(event, value) {
 				this[keyName] = value;
 			};
 
-			modelInterface[setter] = function (value) {
-				console.debug({ setter, value });
+			modelInterface[setter] = function _handler(value) {
 				$model.trigger(setter, value);
+				_handler.name = "setter" + setter;
 				return true;
 			};
-			modelInterface[getter] = function () {
-				return $model.get(0)[keyName];
+			modelInterface[getter] = function _handler() {
+				_handler.name = "getter" + setter;
+				return $model.get(keyName);
 			};
-			console.debug(setter, modelInterface[setter]);
 		}
-		console.debug(eventMap, modelInterface);
 		$model.on(eventMap);
 		return modelInterface;
 	})(

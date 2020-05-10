@@ -1,9 +1,12 @@
-var taskBuild = function (lib) {
+var taskBuild = function (config) {
+	var source = config.buildConfig.source;
+	var target = config.buildConfig.target;
+
+	var gulp = config.gulp;
+	var dest = gulp.dest;
+
 	return function () {
-		console.debug("files are changed.");
-		return lib.gulp
-			.src(lib.buildConfig.source)
-			.pipe(lib.gulp.dest(lib.buildConfig.target));
+		return gulp.src(source).pipe(dest(target));
 	};
 };
 

@@ -1,6 +1,7 @@
-var taskClean = function (lib) {
+var taskClean = function (config) {
+	var clean = config.cleanConfig;
 	return function () {
-		return require("del")(lib.cleanConfig);
+		return require("del")(clean);
 	};
 };
 

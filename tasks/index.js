@@ -1,12 +1,15 @@
-var tasks = function (lib) {
-	var gulp = lib.gulp;
+var tasks = function (config) {
+	var gulp = config.gulp;
+	var task = gulp.task;
+	var series = gulp.series;
 
-	gulp.task("clean", require("./taskClean")(lib));
-	gulp.task("build", require("./taskBuild")(lib));
-	gulp.task("fetch", require("./taskFetch")(lib));
-	gulp.task("watch", require("./taskWatch")(lib));
+	task("clean", require("./taskClean")(config));
+	task("build", require("./taskBuild")(config));
+	task("minify", require("./taskMinify")(config));
+	task("fetch", require("./taskFetch")(config));
+	task("watch", require("./taskWatch")(config));
 
-	return gulp.task("default", gulp.series("clean", "fetch", "build"));
+	return task("default", series("clean", "fetch", "build", "minify"));
 };
 
 module.exports = tasks;

@@ -1,13 +1,21 @@
 var fs = require("fs");
 var gulp = require("gulp");
+var log = require("fancy-log");
 var packageJson = require("./package.json");
 
-var lib = {
+var config = {
+	log: function () {
+		var args = Array.prototype.slice.call(arguments);
+		return function () {
+			return log.apply(null, args);
+		};
+	},
 	gulp: gulp,
 	packageJson: packageJson,
 	cleanConfig: "dist/*",
 	buildConfig: {
 		source: "src/**/*",
+		uglify: ["dist/**/*.js", "!dist/**/*.min.js"],
 		target: "dist"
 	},
 	fetchConfig: {
@@ -17,4 +25,4 @@ var lib = {
 	}
 };
 
-require("./tasks")(lib);
+require("./tasks")(config);

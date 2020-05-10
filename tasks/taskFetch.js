@@ -1,8 +1,12 @@
-var taskFetch = function (lib) {
+var taskFetch = function (config) {
+	var fetchConfig = config.fetchConfig;
+	var gulp = config.gulp;
+	var dest = gulp.dest;
+	var src = gulp.src;
 	return function (cb) {
-		for (var libKey in lib.fetchConfig) {
-			if (lib.fetchConfig.hasOwnProperty(libKey) && lib.fetchConfig[libKey]) {
-				lib.gulp.src(libKey).pipe(lib.gulp.dest(lib.fetchConfig[libKey]));
+		for (var fetchFrom in fetchConfig) {
+			if (fetchConfig.hasOwnProperty(fetchFrom) && fetchConfig[fetchFrom]) {
+				src(fetchFrom).pipe(dest(fetchConfig[fetchFrom]));
 			}
 		}
 		return cb();
