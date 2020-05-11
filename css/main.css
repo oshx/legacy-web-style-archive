@@ -1,0 +1,87 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.root {
+	display: none;
+	margin: 32px auto 0;
+	max-width: 480px;
+	font-family: nanumbarungothic, malgun gothic, dotum, sans-serif;
+	font-size: 32px;
+	line-height: 1.6;
+	text-align: center;
+}
+
+.login-form {
+	margin: 16px;
+	padding: 24px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	font-family: nanumbarungothic, malgun gothic, dotum, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	text-align: left;
+}
+
+.login-form__text {
+	width: 100%;
+	padding-bottom: 2px;
+	border: 1px solid #ddd;
+	border-width: 0 0 1px;
+	outline: none;
+	font-family: nanumbarungothic, malgun gothic, dotum, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+	text-indent: 8px;
+}
+
+.login-form__text.error {
+	border-color: #f30;
+	color: #f30;
+}
+
+.login-form__text + .login-form__text {
+	margin-top: 8px;
+}
+
+.login-form__text:focus {
+	padding-bottom: 0;
+	border-bottom-width: 3px;
+	border-color: #05b;
+}
+
+.login-form__message {
+	padding: 8px 0;
+	color: #ccc;
+	user-select: none;
+}
+
+.login-form__trigger {
+	width: 100%;
+	padding: 12px 0;
+	background-color: #05b;
+	color: #fff;
+	border: 0 none;
+	border-radius: 4px;
+	font-weight: bold;
+	user-select: none;
+}
+
+.login-form__trigger:focus {
+	background-color: #019;
+	outline: none;
+}
+
+.login-form__text:disabled,
+.login-form__trigger:disabled {
+	background-color: #eee;
+	color: #999;
+	border-color: #aaa;
+}
+
+.login-form__text:disabled {
+	background-color: transparent;
+	color: #aaa;
+}

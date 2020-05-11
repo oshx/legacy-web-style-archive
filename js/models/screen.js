@@ -1,0 +1,1 @@
+define(["utils/model"],function(e){"use strict";return e({loading:!1})});

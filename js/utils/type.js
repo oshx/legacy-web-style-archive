@@ -1,0 +1,1 @@
+define(function(){"use strict";return{is:function(n){return void 0===n},safeCall:function(n){return n instanceof Function?n():void 0}}});

@@ -1,0 +1,1 @@
+define(function(){var t=null;return{submitLogin:function(e,n,u){return clearTimeout(t),t=setTimeout(function(){var t="test"===e&&"test"===n;return u({message:t?"test 님 안녕하세요.":"아이디 또는 비밀번호를 확인하세요.",status:t?200:400})},1e3)}}});
