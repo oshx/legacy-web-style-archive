@@ -45,6 +45,6 @@
 		"gulp-watch": "^5.0.1",
 		"rimraf": "^3.0.2",
 		"serve": "^11.3.0",
-		"simple-git": "^2.4.0"
+		"simple-git": "^3.5.0"
 	}
 }
